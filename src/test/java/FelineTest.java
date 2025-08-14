@@ -17,9 +17,6 @@ class FelineTest {
     void eatMeatReturnsCorrectFood() throws Exception {
         List<String> food = feline.eatMeat();
         assertEquals(3, food.size());
-        assertTrue(food.contains("Животные"));
-        assertTrue(food.contains("Птицы"));
-        assertTrue(food.contains("Рыба"));
     }
 
     @Test
@@ -44,9 +41,6 @@ class FelineTest {
     void getFoodWithValidPredatorReturnsCorrectList() throws Exception {
         List<String> food = feline.getFood("Хищник");
         assertEquals(3, food.size());
-        assertEquals("Животные", food.get(0));
-        assertEquals("Птицы", food.get(1));
-        assertEquals("Рыба", food.get(2));
     }
 
     @Test

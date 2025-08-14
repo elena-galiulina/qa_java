@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Alex extends Lion {
 
-    public Alex(Family felidae, Predator predator) throws Exception {
-        super("Самец", felidae, predator);
+    public Alex(Feline feline) throws Exception {
+        super("Самец", feline);
     }
 
     public List<String> getFriends() {

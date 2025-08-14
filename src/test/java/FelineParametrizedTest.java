@@ -3,11 +3,8 @@ import com.example.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import static org.junit.jupiter.api.Assertions.*;
 
-@RunWith(Parameterized.class)
 class FelineParametrizedTest {
 
     private final Feline feline = new Feline();
@@ -24,7 +21,7 @@ class FelineParametrizedTest {
             "Самка, false"
     })
     void lionSexTest(String sex, boolean expectedMane) throws Exception {
-        Lion lion = new Lion(sex, feline, feline);
+        Lion lion = new Lion(sex, feline);
         assertEquals(expectedMane, lion.doesHaveMane());
     }
 }

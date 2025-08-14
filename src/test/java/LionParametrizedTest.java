@@ -12,10 +12,7 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class LionParametrizedTest {
     @Mock
-    Family felidae;
-    @Mock
-    Predator predator;
-    private Lion lion;
+    Feline feline;
 
     @ParameterizedTest
     @CsvSource({
@@ -23,14 +20,14 @@ public class LionParametrizedTest {
             "Самка, false"
     })
     void constructorValidSexSetsManeCorrectly(String sex, boolean expectedMane) throws Exception {
-        Lion lion = new Lion(sex, felidae, predator);
+        Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
         assertEquals(expectedMane, actual);
     }
 
     @ParameterizedTest
     @ValueSource(booleans = {true, false})
-    void doesHaveManeReturnsCorrectValue(boolean maneValue) throws Exception {
+    void doesHaveManeReturnsCorrectValue(boolean maneValue) {
         Lion lion = mock(Lion.class);
         when(lion.doesHaveMane()).thenReturn(maneValue);
         assertEquals(maneValue, lion.doesHaveMane());
